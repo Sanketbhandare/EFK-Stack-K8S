@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: counter
+spec:
+  containers:
+  - name: count
+    image: busybox:latest
+    args: [/bin/sh, -c,'i=0; while true; do echo "Thanks for visiting TechGeekLovesMusic! $i"; i=$((i+1)); sleep 1; done']
+

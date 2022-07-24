@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: efk-pv-storage 
+  namespace: kube-logging
+spec:
+  capacity:
+    storage: 12Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: do-block-storage 
+  mountOptions:
+    - hard
+    - nfsvers=3
+  nfs:
+    path: /opt/data
+    server: 172.16.16.100
