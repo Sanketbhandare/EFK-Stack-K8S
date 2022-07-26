@@ -10,7 +10,7 @@ When running multiple applications and services on a Kubernetes cluster, it is i
 
 ## What is EFK Stack?
 
-**EFK** stands for Elasticsearch, Fluentd, and Kibana. EFK is open-source choice for the Kubernetes log aggregation and analysis.
+**EFK** stands for **Elasticsearch, Fluentd,** and **Kibana**. EFK is open-source choice for the Kubernetes log aggregation and analysis.
 
 **Elasticsearch** is a distributed & scalable search engine. Its primary work is to store logs and retrive logs from fluentd.
 
@@ -21,32 +21,31 @@ When running multiple applications and services on a Kubernetes cluster, it is i
 
 ## Demonstration
 
-Clone the below repository in your workspace
+Clone the below repository in your workspace.
 
     git clone https://github.com/Sanketbhandare/EFK-Stack-K8S.git
 
 
 ## EFK Architecture
 
-![image](https://user-images.githubusercontent.com/13814979/180921222-ecffd05f-cdd3-4950-ba19-0c5c75c08e6f.png)
+![image](https://user-images.githubusercontent.com/13814979/180942634-b183cdc4-de4e-4d16-96eb-7654eadf8a3d.png)
 
-
-  **Image Source:** https://medium.datadriveninvestor.com/centralised-log-management-clm-using-efk-stack-and-docker-32b693df9432
+  **Image Source:** https://faun.pub/logging-architectures-efk-stack-and-kubernetes-6c3f4d940775
 
 
 ## Setup in Kubernetes:
 
   ### ElasticSearch 
-  Components used --> StatefulSet, Headless Service, Storage Class, Persistent Volume 
-  Usage --> To persist the log data and ElasticSearch Headless service is exposed for Fluentd & Kibana to connect it. 
+  Components used --> StatefulSet, Headless Service, Storage Class, Persistent Volume <br/>
+  Usage --> To persist the log data and ElasticSearch Headless service is exposed for Fluentd & Kibana to connect it.<br/><br/> 
 
   ### Fluentd
-  Components used --> DaemonSet, ClusterRole, ClusterRoleBinding, ServiceAccount
-  Usage --> Runs on all nodes in K8S Cluster to collect the container logs. It connects to ElasticSearch Service endpoint to forward the logs.
+  Components used --> DaemonSet, ClusterRole, ClusterRoleBinding, ServiceAccount<br/>
+  Usage --> Runs on all nodes in K8S Cluster to collect the container logs. It connects to ElasticSearch Service endpoint to forward the logs.<br/><br/>
 
   ### Kibana
-  Components used --> Deployment, Service
-  Usage --> Connect to ElasticSearch service endpoint.
+  Components used --> Deployment, Service<br/>
+  Usage --> Connect to ElasticSearch service endpoint.<br/><br/>
 
 
 ## Steps for rolling out EFK Stack
