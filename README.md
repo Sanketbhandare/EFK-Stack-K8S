@@ -1,15 +1,15 @@
 ## EFK-Stack-K8S
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 EFK Monitoring stack installation on Minikube Cluster 
 
 
 ## Monitoring in Kubernetes Cluster
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 When running multiple applications and services on a Kubernetes cluster, it is important to stream your application and Kubernetes cluster logs to one centralized logging infrastructure for easy log analysis.
 
 
 ## What is EFK Stack?
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **EFK** stands for Elasticsearch, Fluentd, and Kibana. EFK is open-source choice for the Kubernetes log aggregation and analysis.
 
 **Elasticsearch** is a distributed & scalable search engine. Its primary work is to store logs and retrive logs from fluentd.
@@ -20,21 +20,21 @@ When running multiple applications and services on a Kubernetes cluster, it is i
 
 
 ## Demonstration
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Clone the below repository in your workspace
 
-  `git clone https://github.com/Sanketbhandare/EFK-Stack-K8S.git
+    git clone https://github.com/Sanketbhandare/EFK-Stack-K8S.git
 
 
 ## EFK Architecture
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ![image](https://user-images.githubusercontent.com/13814979/180921222-ecffd05f-cdd3-4950-ba19-0c5c75c08e6f.png)
 
-              Image Source: https://medium.datadriveninvestor.com/centralised-log-management-clm-using-efk-stack-and-docker-32b693df9432
+
+  **Image Source:** https://medium.datadriveninvestor.com/centralised-log-management-clm-using-efk-stack-and-docker-32b693df9432
 
 
 ## Setup in Kubernetes:
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   ### ElasticSearch 
   Components used --> StatefulSet, Headless Service, Storage Class, Persistent Volume 
@@ -50,7 +50,6 @@ Clone the below repository in your workspace
 
 
 ## Steps for rolling out EFK Stack
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### I. Setup ElasticSearch
 
@@ -82,21 +81,21 @@ Clone the below repository in your workspace
 
 
 ## BEST EFK Practises 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1. Elasticsearch uses heap memory extensively. So plan your setup accordingly.
-2. Elasticsearch search indices fillup quickly. Make sure proper housekeeping automation is there for cleaning up old indices.
-3. Frequently accessible indices can be placed in different nodes having better compute resources.
-4. Indices can be archived to NFS, aws-s3 and restore when you need it.
-5. Dedicated node for dedicated functionality is good for High Availability and fault tolerance.
+
+  1. Elasticsearch uses heap memory extensively. So plan your setup accordingly.
+  2. Elasticsearch search indices fillup quickly. Make sure proper housekeeping automation is there for cleaning up old indices.
+  3. Frequently accessible indices can be placed in different nodes having better compute resources.
+  4. Indices can be archived to NFS, aws-s3 and restore when you need it.
+  5. Dedicated node for dedicated functionality is good for High Availability and fault tolerance.
 
 
 ## Reference Sources:
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-1. https://devopscube.com/setup-efk-stack-on-kubernetes/
-2. https://kubernetes.io/docs/concepts/storage/storage-classes/
-3. https://kubernetes.io/docs/concepts/storage/persistent-volumes/
-4. https://docs.fluentd.org/container-deployment/kubernetes
-5. https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
-6. https://www.elastic.co/guide/en/kibana/current/introduction.html
-7. https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
-8. https://www.linuxtechi.com/configure-nfs-persistent-volume-kubernetes/
+
+  1. https://devopscube.com/setup-efk-stack-on-kubernetes/
+  2. https://kubernetes.io/docs/concepts/storage/storage-classes/
+  3. https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+  4. https://docs.fluentd.org/container-deployment/kubernetes
+  5. https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+  6. https://www.elastic.co/guide/en/kibana/current/introduction.html
+  7. https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
+  8. https://www.linuxtechi.com/configure-nfs-persistent-volume-kubernetes/
