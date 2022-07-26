@@ -67,16 +67,16 @@ II. Setup Kibana
   2. Create NodePort Service for Kibana to access the dashboard
   3. Verify Kibana deployment from master server
 
-  kubectl port-forward <kibana-pod-name> 5601:5601
-  curl http://localhost:5601/app/kibana
+    kubectl port-forward <kibana-pod-name> 5601:5601
+    curl http://localhost:5601/app/kibana
 
 III. Setup Fluentd 
 
-1. Create Service Account for Fluentd Daemonset
-2. Create ClusterRole for Fluentd Daemonset
-3. Create ClusterRoleBinding for Fluentd Daemonset
-4. Create Fluentd Daemonset ( using hostPath volumes)
-5. Create test job to verify Fluentd Setup from master server
+  1. Create Service Account for Fluentd Daemonset
+  2. Create ClusterRole for Fluentd Daemonset
+  3. Create ClusterRoleBinding for Fluentd Daemonset
+  4. Create Fluentd Daemonset ( using hostPath volumes)
+  5. Create test job to verify Fluentd Setup from master server
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -89,7 +89,8 @@ BEST EFK Practises
 5. Dedicated node for dedicated functionality is good for High Availability and fault tolerance.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Reference Sources:
+**Reference Sources:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1. https://devopscube.com/setup-efk-stack-on-kubernetes/
 2. https://kubernetes.io/docs/concepts/storage/storage-classes/
 3. https://kubernetes.io/docs/concepts/storage/persistent-volumes/
